@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Гулсим Омирбек — бухгалтерские услуги</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            boxShadow: {
+              soft: '0 24px 80px rgba(15, 23, 42, 0.12)',
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        transition: background-color 0.35s ease, color 0.35s ease;
+      }
+      .theme-button:focus-visible {
+        outline: 2px solid rgba(251, 191, 36, 0.75);
+        outline-offset: 2px;
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.45s ease, transform 0.45s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .card-glow {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card-glow:hover {
+        transform: translateY(-4px);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50">
+    <div class="px-4 py-6 sm:px-6 lg:px-8">
+      <header class="mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-3xl border border-slate-200/80 bg-white/90 px-4 py-3 shadow-soft backdrop-blur dark:border-slate-800 dark:bg-slate-900/80">
+        <div class="flex items-center gap-2 rounded-full bg-slate-100 px-1.5 py-1 dark:bg-slate-800">
+          <button id="langKZ" class="rounded-full px-3 py-1 text-sm font-semibold text-slate-700 transition hover:bg-slate-200 dark:text-slate-200 dark:hover:bg-slate-700">ҚАЗ</button>
+          <button id="langRU" class="rounded-full px-3 py-1 text-sm font-semibold text-slate-700 transition hover:bg-slate-200 dark:text-slate-200 dark:hover:bg-slate-700">РУС</button>
+        </div>
+        <button id="themeToggle" type="button" class="theme-button inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 shadow-sm transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800">
+          <span id="themeIcon" class="mr-2 text-lg">🌙</span>
+          <span id="themeLabel" class="font-semibold">Тема</span>
+        </button>
+      </header>
+
+      <main class="mx-auto mt-10 max-w-5xl">
+        <section class="rounded-[2rem] border border-slate-200/80 bg-white px-6 py-10 shadow-soft dark:border-slate-800 dark:bg-slate-900/95 sm:px-12 sm:py-12">
+          <p class="mb-4 text-sm uppercase tracking-[0.35em] text-amber-500">Бухгалтерлік қызметтер • ИП</p>
+          <h1 id="titleText" class="mb-5 text-4xl font-extrabold tracking-tight text-slate-950 dark:text-white sm:text-5xl">Гулсим Омирбек</h1>
+          <p id="subtitleText" class="max-w-3xl text-lg leading-8 text-slate-700 dark:text-slate-300">Если начать и вести бизнес стало трудно — обращайтесь!</p>
+
+          <div class="mt-10 grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-start fade-in">
+            <div class="space-y-8">
+              <div>
+                <h2 id="servicesTitle" class="mb-4 text-2xl font-semibold text-slate-900 dark:text-slate-100">Виды услуг:</h2>
+                <div class="space-y-4">
+                  <article class="rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-950/70">
+                    <h3 id="service1Title" class="text-xl font-semibold text-slate-900 dark:text-white">Открытие и закрытие ИП</h3>
+                    <p id="service1Text" class="mt-2 text-slate-600 dark:text-slate-300">Быстрая регистрация бизнеса, полное законное оформление закрытия</p>
+                  </article>
+                  <article class="rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-950/70">
+                    <h3 id="service2Title" class="text-xl font-semibold text-slate-900 dark:text-white">Бухгалтерия & Отчеты</h3>
+                    <p id="service2Text" class="mt-2 text-slate-600 dark:text-slate-300">Помощь в ведении бухгалтерии, своевременная и безошибочная сдача налоговых отчетов, регистрация работников</p>
+                  </article>
+                  <article class="rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-950/70">
+                    <h3 id="service3Title" class="text-xl font-semibold text-slate-900 dark:text-white">Госуслуги & ЭЦП</h3>
+                    <p id="service3Text" class="mt-2 text-slate-600 dark:text-slate-300">Получение ключей ЭЦП, регистрация граждан по безработице и постановка в очередь на жилье/землю</p>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+            <aside class="rounded-[2rem] border border-slate-200 bg-slate-50 p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950/70">
+              <div class="mb-6 flex h-full flex-col justify-between gap-6">
+                <div>
+                  <p class="text-sm uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">Тез байланыс</p>
+                  <p class="mt-4 text-lg font-semibold text-slate-900 dark:text-white">Жылдам жауап және сенімді қолдау.</p>
+                  <p id="contactHint" class="mt-3 text-sm text-slate-600 dark:text-slate-400">Личная консультация — бесплатно и надежно.</p>
+                </div>
+                <div class="space-y-4">
+                  <a id="whatsappButton" href="#" target="_blank" rel="noreferrer" class="flex w-full items-center justify-center gap-2 rounded-2xl bg-amber-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-amber-300">
+                    <span>💬</span>
+                    <span id="buttonWhatsApp">Написать в WhatsApp</span>
+                  </a>
+                  <a id="callButton" href="tel:+77474977286" class="flex w-full items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800">
+                    <span>📞</span>
+                    <span id="buttonCall">Позвонить</span>
+                  </a>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <footer class="mt-10 rounded-3xl border border-slate-200 bg-white/90 px-6 py-5 text-center text-sm text-slate-500 shadow-soft dark:border-slate-800 dark:bg-slate-900/90 dark:text-slate-400">
+          <p id="footerText">Разработка сайта: GitHub Copilot</p>
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      const translations = {
+        kz: {
+          title: 'Гулсим Омирбек',
+          subtitle: 'Кәсіп бастап жүргізу қиындыққа соғып жатса — хабарласыңыз!',
+          servicesTitle: 'Қызмет түрлері:',
+          service1Title: 'ИП ашу және жабу',
+          service1Text: 'Кәсіпкерлікті жылдам тіркеу, жабу жұмыстарын заңды түрде толық орындау',
+          service2Title: 'Бухгалтерия & Отчеттар',
+          service2Text: 'Бухгалтерия жүргізуге көмектесу, салық отчеттарын уақытылы және қатесіз тапсыру, жұмысшыларды тіркеу',
+          service3Title: 'Мемлекеттік қызметтер & ЭЦП',
+          service3Text: 'ЭЦП кілттерін алу, азаматтарды жұмыссыздыққа тіркеу және жер кезегіне қою қызметтері',
+          buttonWhatsApp: 'WhatsApp-қа жазу',
+          buttonCall: 'Қоңырау шалу',
+          contactHint: 'Жеке кеңес — тегін және сенімді.',
+          whatsappMessage: 'Сәлеметсіз бе, бухгалтерлік қызметтер туралы консультация алғым келеді.',
+          footer: 'Сайтты жасаған: GitHub Copilot',
+        },
+        ru: {
+          title: 'Гулсим Омирбек',
+          subtitle: 'Если начать и вести бизнес стало трудно — обращайтесь!',
+          servicesTitle: 'Виды услуг:',
+          service1Title: 'Открытие и закрытие ИП',
+          service1Text: 'Быстрая регистрация бизнеса, полное законное оформление закрытия',
+          service2Title: 'Бухгалтерия & Отчеты',
+          service2Text: 'Помощь в ведении бухгалтерии, своевременная и безошибочная сдача налоговых отчетов, регистрация работников',
+          service3Title: 'Госуслуги & ЭЦП',
+          service3Text: 'Получение ключей ЭЦП, регистрация граждан по безработице и постановка в очередь на жилье/землю',
+          buttonWhatsApp: 'Написать в WhatsApp',
+          buttonCall: 'Позвонить',
+          contactHint: 'Личная консультация — бесплатно и надежно.',
+          whatsappMessage: 'Здравствуйте, хочу получить консультацию по бухгалтерским услугам.',
+          footer: 'Разработка сайта: GitHub Copilot',
+        },
+      };
+
+      const elements = {
+        titleText: document.getElementById('titleText'),
+        subtitleText: document.getElementById('subtitleText'),
+        servicesTitle: document.getElementById('servicesTitle'),
+        service1Title: document.getElementById('service1Title'),
+        service1Text: document.getElementById('service1Text'),
+        service2Title: document.getElementById('service2Title'),
+        service2Text: document.getElementById('service2Text'),
+        service3Title: document.getElementById('service3Title'),
+        service3Text: document.getElementById('service3Text'),
+        buttonWhatsApp: document.getElementById('buttonWhatsApp'),
+        buttonCall: document.getElementById('buttonCall'),
+        footerText: document.getElementById('footerText'),
+      };
+
+      const langButtons = {
+        kz: document.getElementById('langKZ'),
+        ru: document.getElementById('langRU'),
+      };
+      const themeIcon = document.getElementById('themeIcon');
+      const themeLabel = document.getElementById('themeLabel');
+      const themeToggle = document.getElementById('themeToggle');
+      const contactHint = document.getElementById('contactHint');
+      const body = document.body;
+      const whatsappPhone = '+77474977286';
+      const whatsappBase = 'https://wa.me/' + whatsappPhone.replace(/\D/g, '');
+
+      let currentLang = localStorage.getItem('siteLang') || 'ru';
+      let currentTheme = localStorage.getItem('siteTheme') || 'dark';
+
+      function updateWhatsAppLink(text) {
+        document.getElementById('whatsappButton').href = `${whatsappBase}?text=${encodeURIComponent(text)}`;
+      }
+
+      function setLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('siteLang', lang);
+        const translation = translations[lang];
+
+        elements.titleText.textContent = translation.title;
+        elements.subtitleText.textContent = translation.subtitle;
+        elements.servicesTitle.textContent = translation.servicesTitle;
+        elements.service1Title.textContent = translation.service1Title;
+        elements.service1Text.textContent = translation.service1Text;
+        elements.service2Title.textContent = translation.service2Title;
+        elements.service2Text.textContent = translation.service2Text;
+        elements.service3Title.textContent = translation.service3Title;
+        elements.service3Text.textContent = translation.service3Text;
+        elements.buttonWhatsApp.textContent = translation.buttonWhatsApp;
+        elements.buttonCall.textContent = translation.buttonCall;
+        elements.footerText.textContent = translation.footer;
+        contactHint.textContent = translation.contactHint;
+        updateWhatsAppLink(translation.whatsappMessage);
+
+        Object.keys(langButtons).forEach((code) => {
+          const isActive = code === lang;
+          langButtons[code].classList.toggle('bg-amber-400', isActive);
+          langButtons[code].classList.toggle('text-slate-950', isActive);
+          langButtons[code].classList.toggle('shadow-lg', isActive);
+          langButtons[code].classList.toggle('bg-slate-100', !isActive);
+          langButtons[code].classList.toggle('text-slate-700', !isActive);
+          langButtons[code].setAttribute('aria-pressed', String(isActive));
+        });
+      }
+
+      function applyTheme() {
+        const isDark = currentTheme === 'dark';
+        localStorage.setItem('siteTheme', currentTheme);
+        body.classList.toggle('dark', isDark);
+        themeIcon.textContent = isDark ? '🌙' : '☀️';
+        themeLabel.textContent = isDark ? 'Тёмная' : 'Светлая';
+        themeToggle.setAttribute('aria-pressed', String(isDark));
+        themeToggle.setAttribute('aria-label', isDark ? 'Переключить на светлую тему' : 'Переключить на тёмную тему');
+      }
+
+      function revealSection() {
+        document.querySelectorAll('.fade-in').forEach((block, index) => {
+          setTimeout(() => block.classList.add('visible'), 120 * index);
+        });
+      }
+
+      langButtons.kz.addEventListener('click', () => setLanguage('kz'));
+      langButtons.ru.addEventListener('click', () => setLanguage('ru'));
+      themeToggle.addEventListener('click', () => {
+        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme();
+      });
+
+      setLanguage(currentLang);
+      applyTheme();
+      revealSection();
+    </script>
+  </body>
+</html>
